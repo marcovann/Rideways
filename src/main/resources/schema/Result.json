@@ -1,0 +1,55 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "ride_results"
+  ],
+  "properties": {
+    "ride_results": {
+      "$id": "#/properties/ride_results",
+      "type": "array",
+      "title": "The Ride_results Schema",
+      "items": {
+        "$id": "#/properties/ride_results/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+        ],
+        "properties": {
+          "car_type": {
+            "$id": "#/properties/ride_results/items/properties/car_type",
+            "type": "string",
+            "title": "The Car_type Schema",
+            "default": "",
+            "examples": [
+              "STANDARD"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "supplier": {
+            "$id": "#/properties/ride_results/items/properties/supplier",
+            "type": "string",
+            "title": "The Supplier Schema",
+            "default": "",
+            "examples": [
+              "JEFF"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "price": {
+            "$id": "#/properties/ride_results/items/properties/price",
+            "type": "integer",
+            "title": "The Price Schema",
+            "default": 0,
+            "examples": [
+              6252
+            ]
+          }
+        }
+      }
+    }
+  }
+}

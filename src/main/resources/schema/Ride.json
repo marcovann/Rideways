@@ -1,0 +1,75 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/address.schema.json",
+    "type": "object",
+    "title": "Ride",
+    "required": [
+        "supplier_id",
+        "pickup",
+        "dropoff"
+    ],
+    "properties": {
+        "supplier_id": {
+            "$id": "#/properties/supplier_id",
+            "type": "string",
+            "title": "supplier_id",
+            "default": "",
+            "examples": [
+                "DAVE"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "pickup": {
+            "$id": "#/properties/pickup",
+            "type": "string",
+            "title": "pickup",
+            "default": "",
+            "examples": [
+                "51.470020,-0.454295"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "dropoff": {
+            "$id": "#/properties/dropoff",
+            "type": "string",
+            "title": "dropoff",
+            "default": "",
+            "examples": [
+                "51.00000,1.0000"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "options": {
+            "$id": "#/properties/options",
+            "type": "array",
+            "title": "The Options Schema",
+            "items": {
+                "$id": "#/properties/options/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                    "car_type",
+                    "price"
+                ],
+                "properties": {
+                    "car_type": {
+                        "$id": "#/properties/options/items/properties/car_type",
+                        "type": "string",
+                        "title": "car_type",
+                        "enum": ["STANDARD", "EXECUTIVE", "LUXURY", "PEOPLE_CARRIER", "LUXURY_PEOPLE_CARRIER", "MINIBUS"]
+                    },
+                    "price": {
+                        "$id": "#/properties/options/items/properties/price",
+                        "type": "integer",
+                        "title": "price",
+                        "default": 0,
+                        "examples": [
+                            671808
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
